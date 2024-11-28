@@ -17,4 +17,5 @@ xscale = 1;
 
 mostra_estado = false;
 
+img_spd = 40;
 estado = "parado";

@@ -27,7 +27,7 @@
   ],
   "name":"spr_player_ataque1",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Ataque",
     "path":"folders/Sprites/Personagens/Player Test/Ataque.yy",
@@ -92,7 +92,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":200,
-    "yorigin":148,
+    "yorigin":296,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

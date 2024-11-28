@@ -30,9 +30,9 @@ switch (estado) {
         // Mudança de estado
         if (right || left) {
             estado = "movendo";
-        } else if (jump) {
+        } else if (jump || velv != 0) {
             estado = "pulando";
-            velv = -max_velv; // Impulso inicial para o pulo
+            velv = (-max_velv * jump); // Impulso inicial para o pulo
 			image_index = 0;
         } else if (attack) {
 			estado = "ataque";
@@ -86,11 +86,28 @@ switch (estado) {
 	case "ataque": {
 		velh = 0;
 		
-		sprite_index = spr_player_ataque1;
+		if(combo == 0) {
+			sprite_index = spr_player_ataque1;
+		} else if(combo == 1) {
+			sprite_index = spr_player_ataque2;
+		} else if(combo == 2) {
+			sprite_index = spr_player_ataque3;
+		}
+		
+	
+		
+		if(attack && combo < 2 && image_index >= image_number-2) {
+			combo++;
+			image_index = 0;
+		}
+		
 		
 		if(image_index > image_number-1){
 			estado = "parado";
+			velh = 0;
+			combo = 0;
 		}
+		
 		break;
 	}
 }
